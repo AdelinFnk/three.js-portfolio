@@ -248,9 +248,9 @@ export const myProjects = [
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
     return {
-        deskScale: isSmall ? 3 : isMobile ? 4.1 : 4.6,
-        deskPosition: isSmall ? [-4, -10.1, -20.0] : isMobile ? [-5.1, -10.1, -20.0] : [-5.9, -19.1, -20.0],
-        cubePosition: isSmall ? [2, -10, 0] : isMobile ? [5, -11, 0] : isTablet ? [9, -12, -3] : [12, -10, 0],
+        deskScale: isSmall ? 3 : isMobile ? 4.1 : 4.7,
+        deskPosition: isSmall ? [-3, -5.1, -20.0] : isMobile ? [-5.1, -7.1, -20.0] : isTablet ? [-5.1, -9, -20.0] : [-5.1, -11.1, -20.0],
+        cubePosition: isSmall ? [3, -10, 0] : isMobile ? [5, -11, 0] : isTablet ? [9, -12, -3] : [12, -10, 0],
         reactLogoPosition: isSmall ? [2.5, 6, 0] : isMobile ? [5, 5.5, 0] : isTablet ? [8, 5, 0] : [11, 4, 0],
         ringPosition: isSmall ? [-6, 15, 0] : isMobile ? [-11, 14, 0] : isTablet ? [-16, 13, 0] : [-24, 10, 0],
         targetPosition: isSmall ? [-4, -14.5, -10] : isMobile ? [-7, -16, -10] : isTablet ? [-11, -15.5, -10] : [-15, -17, -12],

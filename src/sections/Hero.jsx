@@ -10,48 +10,13 @@ import Target from "../components/Target.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
 import Cube from "../components/Cube.jsx";
 import Rings from "../components/Rings.jsx";
+import HeroCamera from "../components/HeroCamera.jsx";
+import Button from "../components/Button.jsx";
+
 
 const Hero = () => {
 
-    const x = useControls('HackerRoom', {
-        positionX: {
-            value: 2.5,
-            min: -10,
-            max: 10,
-        },
-        positionY: {
-            value: 2.5,
-                min: -20,
-                max: 10,
-        },
-        positionZ: {
-            value: 2.5,
-                min: -20,
-                max: 10,
-        },
-        rotationX: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-        rotationY: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-        rotationZ: {
-            value: 0,
-            min: -10,
-            max: 10,
-        },
-        scale: {
-            value: 1,
-            min: 0.1,
-            max: 10,
 
-        }
-
-    });
     const isSmall = useMediaQuery({maxWidth: 440 })
     const isMobile = useMediaQuery({ maxWidth: 768 });
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
@@ -71,12 +36,16 @@ const Hero = () => {
                 <Canvas className="w-full h-full">
                     <Suspense fallback={<CanvasLoader />}>
                         <PerspectiveCamera makeDefault position={[0, 0, 30]}/>
-                        <HackerRoom
 
-                            position={sizes.deskPosition}
-                            rotation={[0, 0.6, 0]}
-                            scale={sizes.deskScale}
-                        />
+                        <HeroCamera isMobile={isMobile}>
+                            <HackerRoom
+
+                                position={sizes.deskPosition}
+                                rotation={[0, 0.5, 0]}
+                                scale={sizes.deskScale}
+                            />
+                        </HeroCamera>
+
 
                             <group>
                                 <Target position={sizes.targetPosition} />
@@ -91,7 +60,13 @@ const Hero = () => {
                 </Canvas>
             </div>
 
+            <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+                <a href="#about" className="w-fit">
+                    <Button name="Let's learn together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+                </a>
+            </div>
+
         </section>
-    )
-}
+    );
+};
 export default Hero

@@ -19,7 +19,7 @@ const Cube = ({ ...props }) => {
         gsap
             .timeline({
                 repeat: -1,
-                repeatDelay: 1,
+                repeatDelay: 0.5,
             })
             .to(cubeRef.current.rotation, {
                 y: hovered ? '+=2' : `+=${Math.PI * 2}`,
@@ -32,7 +32,7 @@ const Cube = ({ ...props }) => {
     });
 
     return (
-        <Float floatIntensity={1}>
+        <Float floatIntensity={2}>
             <group position={[9, -4, 0]} rotation={[2.6, 0.8, -1.8]} scale={0.7} dispose={null} {...props}>
                 <mesh
                     ref={cubeRef}

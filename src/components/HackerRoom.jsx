@@ -15,14 +15,14 @@ const HackerRoom = props => {
                 receiveShadow
                 geometry={nodes.Untitled.geometry}
                 material={materials.palette}
-                rotation={[Math.PI / 2, 0, 0]}
+                rotation={[Math.PI / 2, 0.02, -0.1]}
             />
             <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Plane.geometry}
                 material={materials['Material.001']}
-                position={[6.836, 0, -4.052]}
+                position={[6.836, 0, -64.052]}
                 scale={9.533}
             />
         </group>
